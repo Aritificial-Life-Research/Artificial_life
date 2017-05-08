@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Common;
+using UnityEngine;
 
-namespace LD32
+namespace MyInput
 {
     public class PlayerInput : BaseBehaviour, IInput
     {
@@ -14,10 +14,10 @@ namespace LD32
         {
             currentMove = Vector3.zero;
 
-            currentMove.x = Input.GetAxis("Horizontal");
-            currentMove.y = Input.GetAxis("Vertical");
+            currentMove.x = UnityEngine.Input.GetAxis("Horizontal");
+            currentMove.y = UnityEngine.Input.GetAxis("Vertical");
 
-            var imousePosition = Input.mousePosition;
+            var imousePosition = UnityEngine.Input.mousePosition;
             imousePosition.z = Camera.main.transform.position.z;
             var mousePosition = Camera.main.ScreenToWorldPoint(imousePosition);
             //Debug.Log(Input.mousePosition);
@@ -26,12 +26,12 @@ namespace LD32
             _lookAt = mousePosition;
 
 
-            if (Input.GetButtonDown("Fire"))
+            if (UnityEngine.Input.GetButtonDown("Fire"))
             {
                 CentralBus.WeaponFire.Invoke();
             }
 
-            if (Input.GetButtonDown("Reload Level"))
+            if (UnityEngine.Input.GetButtonDown("Reload Level"))
             {
                 InnerBus.Global.ManualReloadLevel.Invoke();
             }

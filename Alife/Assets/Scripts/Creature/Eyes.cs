@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
+using Common;
+using UnityEngine;
 
-namespace LD32
+namespace Creature
 {
     public class Eyes: BaseBehaviour
     {
@@ -10,13 +10,11 @@ namespace LD32
         private Vector2 _selfPosition;
         public float EyeSight;
 
-        void satrt()
+        void Start()
         {
-
+            base.Start();
         }
-        void awake()
-        {
-        }
+       
 
         // Update is called once per frame
         void Update()
@@ -24,7 +22,7 @@ namespace LD32
             _selfPosition = transform.position;
 
             _creatureDict = FindNearbyCreatures(EyeSight);
-            CentralBus.CreatureInsight.Invoke(_creatureDict);
+            CentralBus.SightChannel.Invoke(_creatureDict);
 
         }
 

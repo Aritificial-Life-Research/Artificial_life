@@ -5,13 +5,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 445698}
-  - 58: {fileID: 5859502}
-  - 50: {fileID: 5023784}
-  - 114: {fileID: 11491470}
-  - 114: {fileID: 114000012597360616}
+  - component: {fileID: 445698}
+  - component: {fileID: 5859502}
+  - component: {fileID: 5023784}
+  - component: {fileID: 11491470}
+  - component: {fileID: 114000012597360616}
+  - component: {fileID: 114624929235539166}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -24,10 +25,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 484270}
-  - 212: {fileID: 21224566}
+  - component: {fileID: 484270}
+  - component: {fileID: 21224566}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -44,11 +45,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071067}
   m_LocalPosition: {x: -2.7829843, y: -16.886309, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 484270}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &484270
 Transform:
   m_ObjectHideFlags: 1
@@ -58,23 +59,26 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 445698}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5023784
 Rigidbody2D:
-  serializedVersion: 2
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162042}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_IsKinematic: 0
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -106,6 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeTime: 2
   DeathUponTime: 1
+  damage: 10
+  mode: 0
 --- !u!212 &21224566
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -120,7 +126,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -128,7 +136,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -161,3 +169,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5102aa37155f5f3458589a4a36de6805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114624929235539166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb7a3f3c3a53394da4fbef3d0a4579c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LifeTime: 36000
+  DeathUponTime: 0
+  maxHealth: 20

@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-namespace LD32
+﻿namespace Common
 {
     public enum Team { GOOD, EVIL };
     public enum BulletMode { Damage, Convert };

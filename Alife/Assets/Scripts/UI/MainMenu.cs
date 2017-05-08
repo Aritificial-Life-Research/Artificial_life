@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
-namespace LD32
+namespace UI
 {
     public class MainMenu : MonoBehaviour
     {

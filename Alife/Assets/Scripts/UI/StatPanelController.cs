@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Common;
+using Creature;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
-namespace LD32
+namespace UI
 {
     public class StatPanelController : BaseBehaviour
     {

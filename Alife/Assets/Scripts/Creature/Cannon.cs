@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
 
-namespace LD32
+namespace Creature
 {
     public class Cannon : BaseBehaviour
     {

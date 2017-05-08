@@ -1,33 +1,29 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-namespace LD32
+public class Dispatcher
 {
-    public class Dispatcher
+    Dispatcher _instance;
+    Dispatcher instance
     {
-        Dispatcher _instance;
-        Dispatcher instance
+        get
         {
-            get
+            if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = new Dispatcher();
-                }
-
-                return _instance;
+                _instance = new Dispatcher();
             }
-        }
 
-        public Dispatcher()
-        {
-
-        }
-
-        public void Send(string eventName)
-        {
-
+            return _instance;
         }
     }
 
+    public Dispatcher()
+    {
+
+    }
+
+    public void Send(string eventName)
+    {
+
+    }
 }

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using MessageBus;
+using UnityEngine;
 
-namespace LD32
+namespace Common
 {
     public class BaseBehaviour : MonoBehaviour
     {

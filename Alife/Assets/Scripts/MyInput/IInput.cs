@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-namespace LD32
+namespace MyInput
 {
     //can fire Cannon by raising fireEvent
     public interface IInput

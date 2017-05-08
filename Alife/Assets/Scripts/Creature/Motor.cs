@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using Common;
+using MyInput;
+using UnityEngine;
 
-namespace LD32
+namespace Creature
 {
     public class Motor : BaseBehaviour
 

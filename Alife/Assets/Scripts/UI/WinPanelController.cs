@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Common;
+using UnityEngine;
 
-namespace LD32
+namespace UI
 {
     public class WinPanelController : BaseBehaviour
     {

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
 
-namespace LD32
+namespace Creature
 {
 
     //just a facade for Rigidbody2D

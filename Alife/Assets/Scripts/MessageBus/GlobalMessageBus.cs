@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
 
-namespace LD32
+namespace MessageBus
 {
     public class GlobalMessageBus
     {
@@ -56,6 +57,13 @@ namespace LD32
 
         NoArgEvent _manualReloadLevel = new NoArgEvent();
         public NoArgEvent ManualReloadLevel { get { return _manualReloadLevel; } }
+
+
+        VoiceEvent _voiceChannel = new VoiceEvent();
+        public VoiceEvent VoiceChannel
+        {
+            get { return _voiceChannel; }
+        }
     }
 
 }

@@ -1,6 +1,7 @@
+using MessageBus;
 using UnityEngine;
 
-namespace LD32
+namespace Common
 {
 
     public static class ExtensionMethods

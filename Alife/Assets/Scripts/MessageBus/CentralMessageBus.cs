@@ -1,9 +1,19 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
 
-namespace LD32
+namespace MessageBus
 {
     public class CentralMessageBus:MonoBehaviour
     {
+        private readonly JsonEvent _brainRadio = new JsonEvent();
+        private readonly VoiceEvent _heardMessage = new VoiceEvent();
+        private readonly VoiceEvent _talkMessage = new VoiceEvent();
+        private readonly LocationEvent _sightChannel = new LocationEvent();
+        private readonly VectorEvent _motorRotate = new VectorEvent();
+        private readonly VectorEvent _motorMove = new VectorEvent();
+        private readonly VectorEvent _impulseRequested = new VectorEvent();
+        private readonly NoArgEvent _weaponFire = new NoArgEvent();
+
         public GlobalMessageBus Global
         {
             get { return GlobalMessageBus.Instance; }
@@ -24,60 +34,52 @@ namespace LD32
         }*/
 
 
-        TeamEvent changeTeam = new TeamEvent();
+        //public TeamEvent ChangeTeam { get; } = new TeamEvent();
 
-        public TeamEvent ChangeTeam
-        {
-            get { return changeTeam; }
-        }
-
-        IntEvent _damage = new IntEvent();
-
-        public IntEvent Damage
-        {
-            get { return _damage; }
-        }
-
-        NoArgEvent _weaponFire = new NoArgEvent();
+        //public IntEvent Damage { get; } = new IntEvent();
 
         public NoArgEvent WeaponFire
         {
             get { return _weaponFire; }
         }
 
-        BehaviourEvent _destroyed = new BehaviourEvent();
-
-        public BehaviourEvent OnDestroy
-        {
-            get { return _destroyed; }
-        }
-
-        VectorEvent _impulseRequested = new VectorEvent();
-
         public VectorEvent ImpulseRequested
         {
             get { return _impulseRequested; }
         }
-
-        VectorEvent _motorMove = new VectorEvent();
 
         public VectorEvent MotorMove
         {
             get { return _motorMove; }
         }
 
-        VectorEvent _motorRotate = new VectorEvent();
-
         public VectorEvent MotorRotate
         {
             get { return _motorRotate; }
         }
 
-        LocationEvent _creatureInsight  = new LocationEvent();
-
-        public LocationEvent CreatureInsight
+        //eyes to brain
+        public LocationEvent SightChannel
         {
-            get { return _creatureInsight; }
+            get { return _sightChannel; }
+        }
+
+        //Brain to mouth
+        public VoiceEvent TalkMessage
+        {
+            get { return _talkMessage; }
+        }
+
+        //Ear to brain
+        public VoiceEvent HeardMessage
+        {
+            get { return _heardMessage; }
+        }
+
+        //anntenna to brain
+        public JsonEvent BrainRadio
+        {
+            get { return _brainRadio; }
         }
     }
 }

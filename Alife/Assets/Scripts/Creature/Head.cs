@@ -1,13 +1,11 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
-using UnityEditor;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Common;
+using UnityEngine;
 
-namespace LD32
+namespace Creature
 {
-    public class Brain : BaseBehaviour
+    public class Head : BaseBehaviour
     {
 
 
@@ -18,7 +16,7 @@ namespace LD32
         public override void Awake()
         {
             base.Awake();
-            CentralBus.CreatureInsight.AddListener(updateCreatureInsight);
+            CentralBus.SightChannel.AddListener(updateCreatureInsight);
 
         }
 

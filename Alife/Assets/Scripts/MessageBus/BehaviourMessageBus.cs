@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
 
-namespace LD32
+namespace MessageBus
 {
 
     /// <summary>
@@ -10,6 +11,16 @@ namespace LD32
     /// </summary>
     public class BehaviourMessageBus : MonoBehaviour
     {
+        private readonly VoiceEvent _voiceArrived = new VoiceEvent();
+        private readonly VectorEvent _impulseRequested = new VectorEvent();
+        private readonly BehaviourEvent _onDestroy = new BehaviourEvent();
+        private readonly NoArgEvent _fireBullet = new NoArgEvent();
+        private readonly IntEvent _damage = new IntEvent();
+        private readonly TeamEvent _changeTeam = new TeamEvent();
+
+
+
+
         public GlobalMessageBus Global
         {
             get
@@ -18,21 +29,37 @@ namespace LD32
             }
         }
 
-        TeamEvent changeTeam = new TeamEvent();
-        public TeamEvent ChangeTeam { get { return changeTeam; } }
+        public TeamEvent ChangeTeam
+        {
+            get { return _changeTeam; }
+        }
 
-        IntEvent _damage = new IntEvent();
-        public IntEvent Damage { get { return _damage; } }
+        public IntEvent Damage
+        {
+            get { return _damage; }
+        }
 
-        NoArgEvent _fireBullet = new NoArgEvent();
-        public NoArgEvent FireBullet { get { return _fireBullet; } }
+        public NoArgEvent FireBullet
+        {
+            get { return _fireBullet; }
+        }
 
-        BehaviourEvent _destroyed = new BehaviourEvent();
-        public BehaviourEvent OnDestroy { get { return _destroyed; } }
+        public BehaviourEvent OnDestroy
+        {
+            get { return _onDestroy; }
+        }
 
-        VectorEvent _impulseRequested = new VectorEvent();
-        public VectorEvent ImpulseRequested { get {
-            return _impulseRequested; } }
+        public VectorEvent ImpulseRequested
+        {
+            get { return _impulseRequested; }
+        }
+
+        public VoiceEvent VoiceArrived
+        {
+            get { return _voiceArrived; }
+        }
+
+
 
     }
 

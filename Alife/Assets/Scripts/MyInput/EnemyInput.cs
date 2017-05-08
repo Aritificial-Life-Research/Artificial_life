@@ -1,7 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using Common;
+using Creature;
+using MyInput;
+using UnityEngine;
 
-namespace LD32
+namespace MyInput
 {
     public class EnemyInput : BaseBehaviour, IInput
     {
